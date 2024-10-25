@@ -1,2 +1,2 @@
 # UnknownOS
-The Unknown Operating System
+This is the Unknown Operating System. It is nothing but a side project.
