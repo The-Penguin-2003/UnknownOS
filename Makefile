@@ -18,8 +18,8 @@ install: kernel/kernel.bin
 	cp grub.cfg iso/boot/grub/grub.cfg
 	grub-mkrescue -o UnknownOS.iso iso
 
-kernel/kernel.bin: boot/bootstrap.o kernel/link.ld kernel/kernel.o drivers/sys.o drivers/io.o drivers/vga.o
-	$(LD) $(LDFLAGS) -o kernel/kernel.bin boot/bootstrap.o kernel/kernel.o drivers/sys.o drivers/io.o drivers/vga.o
+kernel/kernel.bin: boot/bootstrap.o kernel/link.ld kernel/kernel.o drivers/sys.o drivers/io.o drivers/vga.o drivers/serial.o
+	$(LD) $(LDFLAGS) -o kernel/kernel.bin boot/bootstrap.o kernel/kernel.o drivers/sys.o drivers/io.o drivers/vga.o drivers/serial.o
 
 kernel/%.o: kernel/%.c
 	$(CC) $(CCFLAGS) -c -o $@ $<

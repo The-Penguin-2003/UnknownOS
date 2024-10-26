@@ -1,6 +1,7 @@
 /* Unknown OS Kernel */
 
 #include <vga.h>
+#include <serial.h>
 
 int32_t kernel_main()
 {
@@ -15,6 +16,9 @@ int32_t kernel_main()
 
 	set_text_color(15, 0);
 	puts("\r\n");
+
+	set_text_color(3, 0);
+	init_serial();
 
 	for (;;);
 	return 0;
